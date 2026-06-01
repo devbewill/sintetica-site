@@ -8,25 +8,28 @@ export function Hero() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      document.querySelectorAll(`.${styles.line}`).forEach((el, i) => {
-        setTimeout(() => el.classList.add(styles.lineVisible), i * 200);
+      document.querySelectorAll(`.${styles.reveal}`).forEach((el, i) => {
+        setTimeout(() => el.classList.add(styles.visible), i * 180);
       });
-    }, 200);
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className={styles.hero} ref={heroRef}>
       <div className={styles.inner}>
-        <p className={styles.kicker}>Organizzazione · Persone · Struttura</p>
-        <h1 className={styles.title}>
-          <span className={styles.line}>Dare forma</span>
-          <span className={styles.line}>al cambiamento<span className={styles.period}>.</span></span>
+        <h1 className={`${styles.brand} ${styles.reveal}`}>
+          Sintetica<span className={styles.dot}>.</span>
         </h1>
-        <p className={styles.subtitle}>
-          Le idee generano possibilità.<br />
-          Aiutiamo le organizzazioni a dar loro struttura.
-        </p>
+        <div className={styles.payoff}>
+          <p className={`${styles.tagline} ${styles.reveal}`}>
+            Dare forma al cambiamento<span className={styles.dot}>.</span>
+          </p>
+          <p className={`${styles.subtitle} ${styles.reveal}`}>
+            Le idee generano possibilità.<br />
+            Aiutiamo le organizzazioni a dar loro struttura.
+          </p>
+        </div>
       </div>
     </section>
   );

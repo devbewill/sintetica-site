@@ -1,13 +1,14 @@
 /* ═══════════════════════════════════════════════════
-   Hero — Swiss: massive type, white bg
+   Hero — Brand-first: SINTETICA enorme + payoff
    ═══════════════════════════════════════════════════ */
 
 .hero {
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
-  align-items: flex-end;
-  padding: var(--s6) var(--s2) var(--s6);
+  align-items: center;
+  justify-content: center;
+  padding: var(--s6) var(--s2);
   background: var(--color-white);
 }
 
@@ -17,42 +18,36 @@
   max-width: 1100px;
 }
 
-.kicker {
+/* ── Brand name: enorme, centrato ── */
+.brand {
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-bottom: var(--s3);
-}
-
-.title {
-  margin-bottom: var(--s4);
-}
-
-.line {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 7.5rem);
+  font-size: clamp(4rem, 16vw, 14rem);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--color-black);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  text-align: center;
+  margin-bottom: var(--s6);
 }
 
-.lineVisible {
-  opacity: 1;
-  transform: translateY(0);
+/* ── Payoff block sotto il brand ── */
+.payoff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
 }
 
-.period {
-  color: var(--color-red);
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  text-align: center;
 }
 
 .subtitle {
@@ -61,19 +56,42 @@
   font-weight: 300;
   line-height: 1.7;
   color: var(--color-muted);
-  max-width: 380px;
+  text-align: center;
+  max-width: 420px;
 }
 
+/* ── Red dot ── */
+.dot {
+  color: var(--color-red);
+}
+
+/* ── Reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .hero {
-    min-height: 90vh;
-    align-items: flex-end;
+    min-height: 100vh;
     padding: var(--s6) var(--s2) var(--s4);
   }
-  .line {
-    font-size: clamp(2.2rem, 13vw, 4rem);
-    letter-spacing: -0.03em;
+  .brand {
+    font-size: clamp(3.2rem, 18vw, 6rem);
+    margin-bottom: var(--s4);
   }
-  .subtitle { font-size: 0.95rem; }
-  .inner { width: var(--container); }
+  .tagline {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
 }
