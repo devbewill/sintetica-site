@@ -5,13 +5,17 @@ import styles from "./Nav.module.css";
 
 export function Nav() {
   const ref = useRef<HTMLElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const nav = ref.current;
+    const line = lineRef.current;
+    if (!nav || !line) return;
 
     const onScroll = () => {
-      el.classList.toggle(styles["nav--scrolled"], window.scrollY > 60);
+      const scrolled = window.scrollY > 80;
+      nav.classList.toggle(styles["nav--scrolled"], scrolled);
+      line.style.transform = scrolled ? "scaleX(1)" : "scaleX(0)";
     };
 
     onScroll();
@@ -23,12 +27,13 @@ export function Nav() {
     <nav ref={ref} className={styles.nav}>
       <div className={styles.inner}>
         <a href="/" className={styles.logo}>
-          Sintetica
+          S<span className={styles.accent}>.</span>sintetica
         </a>
         <a href="mailto:hello@sintetica.xyz" className={styles.contact}>
-          Contatto
+          Scrivici
         </a>
       </div>
+      <div ref={lineRef} className={styles.line} />
     </nav>
   );
 }

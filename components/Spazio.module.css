@@ -1,55 +1,108 @@
 .spazio {
   background: var(--color-bg-dark);
   padding: var(--space-3xl) 0;
-  display: flex;
-  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle warm glow */
+.spazio::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 93, 62, 0.06) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .inner {
   width: var(--container);
   margin: 0 auto;
-}
-
-.content {
-  position: relative;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: var(--space-xl) 0;
-}
-
-.mark {
-  position: absolute;
-  top: -1rem;
-  left: -0.05em;
-  font-size: 12rem;
-  font-weight: 300;
-  line-height: 0.8;
-  color: rgba(255, 255, 255, 0.04);
-  pointer-events: none;
-  user-select: none;
-}
-
-.text {
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-  font-weight: 300;
-  line-height: 1.55;
-  letter-spacing: -0.01em;
-  color: var(--color-fg-dark);
   position: relative;
   z-index: 1;
 }
 
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+/* ─── Number ─── */
+.number {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+/* ─── Accent line ─── */
+.accentLine {
+  height: 1px;
+  background: var(--color-accent);
+  margin-bottom: var(--space-lg);
+}
+
+/* ─── Quote lines ─── */
+.quote {
+  margin-bottom: var(--space-xl);
+}
+
+.quoteLine {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--color-fg-on-dark);
+  opacity: 0;
+  transform: translateY(1.2rem);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quoteLine--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quoteLineAlt {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* ─── Credit ─── */
+.credit {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--color-fg-dim);
+}
+
+.emDash {
+  color: var(--color-accent);
+  font-size: 1.2em;
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .mark {
-    font-size: 7rem;
-    top: -0.5rem;
-  }
-
-  .text {
-    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
-  }
-
   .content {
     padding: var(--space-lg) 0;
+  }
+
+  .quoteLine {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
   }
 }
