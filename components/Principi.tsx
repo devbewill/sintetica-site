@@ -35,9 +35,8 @@ export function Principi() {
     <section className={styles.section}>
       <div className={styles.container}>
         <Reveal as="h2" className={styles.header}>
-          Quattro dimensioni<span>.</span>
+          Quattro dimensioni<span className={styles.headerSpan}>.</span>
         </Reveal>
-
         <div className={styles.grid}>
           {items.map((item) => (
             <Reveal key={item.num} as="article" className={styles.card}>

@@ -3,15 +3,13 @@
 import { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 
-const lines = ["Dare forma", "al cambiamento."];
-
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       document.querySelectorAll(`.${styles.line}`).forEach((el, i) => {
-        setTimeout(() => el.classList.add(styles.lineVisible), i * 220);
+        setTimeout(() => el.classList.add(styles.lineVisible), i * 200);
       });
     }, 200);
     return () => clearTimeout(timer);
@@ -20,16 +18,14 @@ export function Hero() {
   return (
     <section className={styles.hero} ref={heroRef}>
       <div className={styles.inner}>
-        <div className={styles.redDot} />
+        <p className={styles.kicker}>Organizzazione · Persone · Struttura</p>
         <h1 className={styles.title}>
-          {lines.map((line, i) => (
-            <span key={i} className={styles.line}>
-              {line}
-            </span>
-          ))}
+          <span className={styles.line}>Dare forma</span>
+          <span className={styles.line}>al cambiamento<span className={styles.period}>.</span></span>
         </h1>
         <p className={styles.subtitle}>
-          Le idee generano possibilità. Aiutiamo le organizzazioni a dar loro struttura.
+          Le idee generano possibilità.<br />
+          Aiutiamo le organizzazioni a dar loro struttura.
         </p>
       </div>
     </section>

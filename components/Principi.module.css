@@ -1,96 +1,91 @@
 /* ═══════════════════════════════════════════════════
-   Principi — Big bold titles, red accents
+   Principi — Swiss grid, white bg, red numbers
    ═══════════════════════════════════════════════════ */
 
 .section {
-  padding: var(--space-3xl) var(--space-sm);
-  background: var(--color-bg);
+  padding: var(--s10) var(--s2);
+  background: var(--color-white);
 }
 
 .container {
   width: var(--container);
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .header {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--color-ink);
-  margin-bottom: var(--space-xl);
-  max-width: 700px;
+  color: var(--color-black);
+  margin-bottom: var(--s4);
 }
 
-.header span {
-  color: var(--color-accent);
+.headerSpan {
+  color: var(--color-red);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-light);
 }
 
 .card {
-  padding: var(--space-lg) var(--space-lg) var(--space-xl);
-  border-bottom: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
+  padding: var(--s3) var(--s3) var(--s4);
+  border-bottom: 1px solid var(--color-light);
+  border-right: 1px solid var(--color-light);
 }
 
-.card:nth-child(2n) {
-  border-right: none;
-}
+.card:nth-child(2n) { border-right: none; }
 
 .cardNum {
   font-family: var(--font-display);
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: var(--color-accent);
-  opacity: 0.2;
-  margin-bottom: var(--space-xs);
+  color: var(--color-red);
+  margin-bottom: var(--s1);
 }
 
 .cardLabel {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
+  color: var(--color-red);
+  margin-bottom: var(--s2);
 }
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--color-ink);
-  margin-bottom: var(--space-sm);
+  color: var(--color-black);
+  margin-bottom: var(--s1);
 }
 
 .cardText {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 300;
   line-height: 1.7;
-  color: var(--color-ink-muted);
-  max-width: 400px;
+  color: var(--color-muted);
+  max-width: 360px;
 }
 
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; }
   .card {
     border-right: none;
-    padding: var(--space-md) var(--space-md) var(--space-lg);
+    padding: var(--s2) var(--s2) var(--s3);
   }
-  .cardNum { font-size: 3rem; }
-  .header { font-size: clamp(1.8rem, 7vw, 3rem); }
+  .header { font-size: clamp(1.5rem, 7vw, 2.5rem); }
+  .container { width: var(--container); }
 }

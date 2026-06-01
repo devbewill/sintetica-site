@@ -6,16 +6,16 @@ import styles from "./Statement.module.css";
 type Props = {
   title: string;
   text: string;
-  accent?: boolean;
-  redLine?: boolean;
+  red?: boolean;
+  num?: string;
 };
 
-export function Statement({ title, text, accent, redLine }: Props) {
+export function Statement({ title, text, red, num }: Props) {
   return (
-    <section className={`${styles.section} ${accent ? styles.sectionAlt : ""}`}>
+    <section className={`${styles.section} ${red ? styles.red : ""}`}>
       <div className={styles.inner}>
+        {num && <span className={styles.num}>{num}</span>}
         <Reveal as="h2" className={styles.title}>
-          {redLine && <span className={styles.redBar} />}
           {title}
         </Reveal>
         <Reveal as="p" delay={2} className={styles.text}>
