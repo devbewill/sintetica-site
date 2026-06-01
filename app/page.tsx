@@ -10,27 +10,27 @@ export default function Home() {
       <Hero />
 
       <Statement
+        num="01"
         title="Le idee generano possibilità"
         titleAccent="."
         text="Ogni trasformazione parte da un'intuizione. Ma da sola non basta. Serve struttura, competenze, organizzazione."
-        num="01"
       />
 
       <Statement
+        num="02"
         title="La struttura dà forma"
         titleAccent="."
         text="Aiutiamo le organizzazioni a costruire le condizioni per cui nuove possibilità diventano realtà. Non prescriviamo soluzioni — creiamo il terreno."
-        num="02"
-      />
-
-      <Statement
-        title="Persone, processi, competenze"
-        titleAccent="."
-        text="Sono questi gli elementi che contano. Non gli strumenti. Non le mode. Il cambiamento reale parte da qui."
-        num="03"
       />
 
       <Spazio />
+
+      <Statement
+        num="03"
+        title="Persone, processi, competenze"
+        titleAccent="."
+        text="Sono questi gli elementi che contano. Non gli strumenti. Non le mode. Il cambiamento reale parte da qui."
+      />
 
       <Principi />
 

@@ -10,10 +10,10 @@ const lines = [
 ];
 
 export function Spazio() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const el = sectionRef.current;
+    const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -22,26 +22,28 @@ export function Spazio() {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className={styles.section} ref={sectionRef}>
-      <div className={styles.glow} />
-      <div className={styles.content}>
+    <section className={styles.section} ref={ref}>
+      <div className={styles.inner}>
         {lines.map((line, i) => (
           <p
             key={i}
-            className={`${styles.line} ${i === lines.length - 1 ? styles.lineAccent : ""}`}
-            style={{ transitionDelay: `${i * 0.2}s` }}
+            className={`${styles.line} ${i === 2 ? styles.accentLine : ""}`}
+            style={{ transitionDelay: `${i * 0.15}s` }}
           >
             {line}
           </p>
         ))}
-        <p className={styles.attribution}>— Il principio fondativo</p>
+        <div className={styles.sep} />
+        <p className={styles.attr} style={{ transitionDelay: "0.5s" }}>
+          Il principio fondativo
+        </p>
       </div>
     </section>
   );

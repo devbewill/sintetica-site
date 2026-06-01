@@ -4,10 +4,10 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
-const sans = Inter({
+const body = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
-  variable: "--font-sans",
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="it" className={`${sans.variable} ${display.variable}`}>
+    <html lang="it" className={`${body.variable} ${display.variable}`}>
       <body>
         <Nav />
         <main>{children}</main>

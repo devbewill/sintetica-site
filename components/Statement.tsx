@@ -4,17 +4,20 @@ import { Reveal } from "./FadeUp";
 import styles from "./Statement.module.css";
 
 type Props = {
+  num: string;
   title: string;
   titleAccent?: string;
   text: string;
-  num?: string;
 };
 
-export function Statement({ title, titleAccent, text, num }: Props) {
+export function Statement({ num, title, titleAccent, text }: Props) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        {num && <span className={styles.num}>{num}</span>}
+        <div className={styles.header}>
+          <span className={styles.num}>{num}</span>
+          <div className={styles.line} />
+        </div>
         <Reveal as="h2" className={styles.title}>
           {title}{titleAccent && <span className={styles.accent}>{titleAccent}</span>}
         </Reveal>

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
-   Sintetica — Design System v7
-   Swiss · Red & White · Typographic Grid
+   Sintetica — Design System v10
+   Warm Italian · Editorial · Boutique
    ═══════════════════════════════════════════════════ */
 
 @layer reset, base, components, utilities;
@@ -17,60 +17,82 @@
   }
 
   body {
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-weight: 400;
-    color: var(--color-black);
-    background: var(--color-white);
+    color: var(--color-text);
+    background: var(--color-bg);
     line-height: 1.6;
     overflow-x: hidden;
   }
 
   a { color: inherit; text-decoration: none; }
   img, svg { max-width: 100%; display: block; }
-  ::selection { background: var(--color-red); color: var(--color-white); }
+  ::selection { background: var(--color-accent); color: var(--color-bg); }
 }
 
 @layer base {
   :root {
-    --color-white: #FFFFFF;
-    --color-off:    #FAFAFA;
-    --color-red:    #FF1B00;
-    --color-black:  #0A0A0A;
-    --color-muted:  #6B6B6B;
-    --color-light:  #D4D4D4;
+    /* ── Colors — Warm Italian ── */
+    --color-bg:      #FCFBF9;
+    --color-surface: #F5F3EF;
+    --color-border:  #E8E4DD;
+    --color-text:    #1C1917;
+    --color-text-secondary: #44403C;
+    --color-text-muted: #78716C;
+    --color-accent:  #B91C1C;
+    --color-white:   #FFFFFF;
 
-    --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: var(--font-display), -apple-system, BlinkMacSystemFont, sans-serif;
+    /* ── Typography ── */
+    --font-display: var(--font-display), system-ui, sans-serif;
+    --font-body:    var(--font-body), system-ui, sans-serif;
 
-    --container: min(88vw, 1100px);
+    /* ── Spacing — 8px grid ── */
+    --sp-1: 0.25rem;   /* 4px */
+    --sp-2: 0.5rem;    /* 8px */
+    --sp-3: 0.75rem;   /* 12px */
+    --sp-4: 1rem;      /* 16px */
+    --sp-5: 1.5rem;    /* 24px */
+    --sp-6: 2rem;      /* 32px */
+    --sp-7: 3rem;      /* 48px */
+    --sp-8: 4rem;      /* 64px */
+    --sp-9: 6rem;      /* 96px */
+    --sp-10: 8rem;     /* 128px */
 
-    --s1: 1rem;
-    --s2: 2rem;
-    --s3: 3rem;
-    --s4: 4rem;
-    --s6: 6rem;
-    --s8: 8rem;
-    --s10: 10rem;
-    --s14: 14rem;
+    /* ── Container ── */
+    --container-max: 1200px;
+    --container-pad: clamp(1.5rem, 5vw, 4rem);
+
+    /* ── Animation ── */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur-fast: 0.15s;
+    --dur-base: 0.3s;
+    --dur-slow: 0.6s;
   }
 }
 
 @layer components {
   .reveal {
     opacity: 0;
-    transform: translateY(1.2rem);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(16px);
+    transition: opacity var(--dur-slow) var(--ease),
+                transform var(--dur-slow) var(--ease);
   }
-  .reveal--visible { opacity: 1; transform: translateY(0); }
-  .delay-1 { transition-delay: 0.06s; }
-  .delay-2 { transition-delay: 0.12s; }
-  .delay-3 { transition-delay: 0.18s; }
-  .delay-4 { transition-delay: 0.24s; }
-  .delay-5 { transition-delay: 0.30s; }
+  .reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-1 { transition-delay: 0.08s; }
+  .delay-2 { transition-delay: 0.16s; }
+  .delay-3 { transition-delay: 0.24s; }
+  .delay-4 { transition-delay: 0.32s; }
 
-  .line-expand { width: 0; transition: width 1s cubic-bezier(0.22, 1, 0.36, 1); }
-  .line-expand--visible { width: var(--line-width, 3rem); }
+  .line-expand {
+    width: 0;
+    transition: width 1s var(--ease);
+  }
+  .line-expand--visible {
+    width: var(--line-width, 2rem);
+  }
 
   .sr-only {
     position: absolute; width: 1px; height: 1px;
@@ -79,15 +101,25 @@
   }
 }
 
+/* ── Container utility ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
 @media (max-width: 768px) {
   :root {
-    --s14: 7rem; --s10: 6rem; --s8: 5rem; --s6: 4rem; --s4: 3rem;
-    --container: 90vw;
+    --sp-10: 5rem;
+    --sp-9: 4rem;
+    --sp-8: 3rem;
+    --sp-7: 2.5rem;
   }
 }
 @media (max-width: 480px) {
   :root {
-    --s14: 5rem; --s10: 4rem; --s8: 3rem; --s6: 3rem;
-    --container: 92vw;
+    --sp-10: 4rem;
+    --sp-9: 3rem;
   }
 }
