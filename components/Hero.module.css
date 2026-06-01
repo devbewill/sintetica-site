@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   Hero — Space Grotesk display, tight tracking
+   Hero — Ouro style: massive tight grotesque on greige
    ═══════════════════════════════════════════════════ */
 
 .hero {
@@ -22,26 +22,25 @@
 /* ─── Label ─────────────────────────────────────── */
 .label {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-fg-muted);
+  color: var(--color-ink-muted);
   margin-bottom: var(--space-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
 }
 
 /* ─── Title ─────────────────────────────────────── */
 .title {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 8.5vw, 8rem);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  color: var(--color-fg);
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--color-ink);
   margin-bottom: var(--space-lg);
 }
 
@@ -49,9 +48,9 @@
   display: inline-block;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  margin-right: 0.25em;
+  transition: opacity 0.7s cubic-bezier(0.2, 0.88, 0.12, 1),
+              transform 0.7s cubic-bezier(0.2, 0.88, 0.12, 1);
+  margin-right: 0.22em;
 }
 
 .wordVisible {
@@ -61,12 +60,13 @@
 
 /* ─── Subtitle ──────────────────────────────────── */
 .subtitle {
-  font-family: var(--font-sans);
-  font-size: 1.125rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--color-fg-alt);
-  max-width: 420px;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  color: var(--color-ink-muted);
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -82,8 +82,9 @@
   display: block;
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, var(--color-fg-muted), transparent);
+  background: var(--color-ink-muted);
   animation: scrollPulse 2.4s ease-in-out infinite;
+  transform-origin: top;
 }
 
 @keyframes scrollPulse {
@@ -94,15 +95,8 @@
 /* ─── Responsive ────────────────────────────────── */
 @media (max-width: 768px) {
   .title {
-    font-size: clamp(2.8rem, 10vw, 4.5rem);
-    letter-spacing: -0.03em;
+    font-size: clamp(2.6rem, 10vw, 4.2rem);
   }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .inner {
-    width: var(--container);
-  }
+  .subtitle { font-size: 0.95rem; }
+  .inner { width: var(--container); }
 }

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
-   Sintetica — Design System v3
-   Grotesque · Geometric · Sharp
+   Sintetica — Design System v4
+   Ouro-inspired: Greige · Black · Red
    ═══════════════════════════════════════════════════ */
 
 @layer reset, base, components, utilities;
@@ -19,46 +19,51 @@
   body {
     font-family: var(--font-sans);
     font-weight: 400;
-    color: var(--color-fg);
+    color: var(--color-ink);
     background: var(--color-bg);
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
   }
 
   a { color: inherit; text-decoration: none; }
   img, svg { max-width: 100%; display: block; }
-  ::selection { background: var(--color-accent); color: white; }
+  ::selection { background: var(--color-selection); color: var(--color-ink); }
 }
 
 /* ─── Properties ─────────────────────────────────── */
 @layer base {
   :root {
-    /* Neutral palette — slightly warmer than pure gray */
-    --color-bg:        #FAFAF8;
-    --color-bg-soft:   #F2F1EE;
-    --color-bg-muted:  #E8E7E3;
-    --color-bg-dark:   #141414;
-    --color-bg-deep:   #0C0C0C;
+    /* Ouro-inspired warm greige palette */
+    --color-bg:        #DDDBD6;
+    --color-bg-soft:   #D2D0CB;
+    --color-bg-muted:  #C5C3BD;
+    --color-bg-light:  #EBE9E4;
+    --color-bg-dark:   #0A0A0A;
+    --color-bg-deep:   #050505;
 
-    /* Foregrounds */
-    --color-fg:        #141414;
-    --color-fg-alt:    #5A5A57;
-    --color-fg-muted:  #8E8E89;
-    --color-fg-light:  #D4D3CF;
-    --color-fg-on-dark:#EAEAE7;
-    --color-fg-dim:    #6E6E6A;
+    /* Ink — pure black */
+    --color-ink:       #000000;
+    --color-ink-muted: #B5AFA6;
+    --color-ink-dim:   #8A847B;
 
-    /* Accent — burnt umber */
-    --color-accent:    #C4553A;
-    --color-accent-soft: rgba(196, 85, 58, 0.10);
+    /* Accent — vivid red */
+    --color-accent:    #FF1B00;
+    --color-accent-soft: rgba(255, 27, 0, 0.10);
+
+    /* On dark */
+    --color-on-dark:   #F2F1EC;
+    --color-on-dark-muted: #B5AFA6;
 
     /* Borders */
-    --color-border:    #D9D8D4;
-    --color-border-dark: #2A2A28;
+    --color-border:    rgba(0, 0, 0, 0.12);
+    --color-border-dark: rgba(242, 241, 236, 0.14);
+
+    /* Selection */
+    --color-selection: #EAFF00;
 
     /* Font families */
-    --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-display: var(--font-display), var(--font-sans), sans-serif;
+    --font-sans: var(--font-display), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: var(--font-display), -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Container */
     --container: min(88vw, 1200px);
@@ -72,21 +77,6 @@
     --space-xl:  6rem;
     --space-2xl: 9rem;
     --space-3xl: 13rem;
-  }
-}
-
-/* ─── Noise overlay ──────────────────────────────── */
-@layer base {
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.018;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 180px;
   }
 }
 
