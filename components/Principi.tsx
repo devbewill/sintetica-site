@@ -8,25 +8,25 @@ const items = [
     num: "01",
     label: "Struttura",
     title: "Dare forma alle idee",
-    text: "Le idee hanno bisogno di struttura per diventare azione. Progettiamo percorsi chiari tra l'intuizione e il risultato.",
+    text: "Le idee diventano utili quando trovano sequenza, responsabilità e criteri di scelta.",
   },
   {
     num: "02",
     label: "Competenze",
-    title: "Coltivare capacità",
-    text: "Le competenze sono il patrimonio più concreto di un'organizzazione. Aiutiamo a identificarle, svilupparle e metterle in circolo.",
+    title: "Rendere visibile il sapere",
+    text: "Le capacità già presenti nell'organizzazione vengono riconosciute, collegate e messe in movimento.",
   },
   {
     num: "03",
-    label: "Organizzazione",
-    title: "Costruire condizioni",
-    text: "Il modo in cui un'organizzazione è strutturata determina ciò che può ottenere. Lavoriamo sulle condizioni che rendono possibili i risultati.",
+    label: "Processi",
+    title: "Togliere attrito",
+    text: "Il lavoro scorre meglio quando passaggi, decisioni e strumenti sono coerenti tra loro.",
   },
   {
     num: "04",
     label: "Adattamento",
-    title: "Sviluppare resilienza",
-    text: "La capacità di adattarsi non è un evento — è una competenza che si costruisce nel tempo, attraverso pratica e attenzione.",
+    title: "Costruire continuità",
+    text: "Il cambiamento non resta episodio: diventa metodo, ritmo, capacità interna.",
   },
 ];
 
@@ -34,9 +34,12 @@ export function Principi() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Reveal as="h2" className={styles.header}>
-          Quattro dimensioni<span className={styles.headerAccent}>.</span>
-        </Reveal>
+        <div className={styles.head}>
+          <Reveal as="p" className={styles.kicker}>Come lavoriamo</Reveal>
+          <Reveal as="h2" delay={1} className={styles.header}>
+            Quattro leve, una direzione<span className={styles.headerAccent}>.</span>
+          </Reveal>
+        </div>
         <div className={styles.list}>
           {items.map((item, i) => (
             <Reveal key={item.num} delay={(i + 1) as 1 | 2 | 3 | 4 | 5} className={styles.item}>
