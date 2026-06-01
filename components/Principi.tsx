@@ -34,8 +34,8 @@ export function Principi() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Reveal as="p" className={styles.header}>
-          Quattro dimensioni dell'evoluzione
+        <Reveal as="h2" className={styles.header}>
+          Quattro dimensioni<span>.</span>
         </Reveal>
 
         <div className={styles.grid}>
