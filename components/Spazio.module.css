@@ -1,108 +1,90 @@
-.spazio {
-  background: var(--color-bg-dark);
-  padding: var(--space-3xl) 0;
+/* ═══════════════════════════════════════════════════
+   Spazio — Dark section, weight contrast grotesque
+   ═══════════════════════════════════════════════════ */
+
+.section {
   position: relative;
+  background: var(--color-bg-dark);
+  padding: var(--space-3xl) var(--space-sm);
   overflow: hidden;
 }
 
-/* Subtle warm glow */
-.spazio::before {
-  content: '';
+.glow {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 93, 62, 0.06) 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(196, 85, 58, 0.06) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
-.inner {
-  width: var(--container);
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
 .content {
-  max-width: 700px;
+  position: relative;
+  width: var(--container-narrow);
+  max-width: 780px;
   margin: 0 auto;
-  padding: var(--space-xl) 0;
+  text-align: center;
 }
 
-/* ─── Number ─── */
-.number {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  margin-bottom: var(--space-md);
-}
-
-/* ─── Accent line ─── */
-.accentLine {
-  height: 1px;
-  background: var(--color-accent);
-  margin-bottom: var(--space-lg);
-}
-
-/* ─── Quote lines ─── */
-.quote {
-  margin-bottom: var(--space-xl);
-}
-
-.quoteLine {
-  font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  color: var(--color-fg-on-dark);
+/* ─── Lines ─────────────────────────────────────── */
+.line {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--color-fg-light);
+  margin-bottom: 0.4em;
   opacity: 0;
-  transform: translateY(1.2rem);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(20px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.quoteLine--visible {
+.visible .line {
   opacity: 1;
   transform: translateY(0);
 }
 
-.quoteLineAlt {
-  font-style: italic;
+.lineAccent {
+  font-weight: 600;
   color: var(--color-accent);
+  margin-top: 0.2em;
 }
 
-/* ─── Credit ─── */
-.credit {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-sans);
+/* ─── Attribution ───────────────────────────────── */
+.attribution {
+  font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--color-fg-dim);
+  margin-top: var(--space-lg);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s,
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s;
 }
 
-.emDash {
-  color: var(--color-accent);
-  font-size: 1.2em;
+.visible .attribution {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ─── Responsive ─── */
+/* ─── Responsive ────────────────────────────────── */
 @media (max-width: 768px) {
-  .content {
-    padding: var(--space-lg) 0;
+  .section {
+    padding: var(--space-2xl) var(--space-md);
   }
 
-  .quoteLine {
-    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  .line {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  .content {
+    width: var(--container);
   }
 }

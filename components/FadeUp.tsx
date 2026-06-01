@@ -6,7 +6,7 @@ type Props = {
   children: ReactNode;
   className?: string;
   delay?: 1 | 2 | 3 | 4 | 5;
-  as?: "div" | "section" | "article" | "blockquote" | "span" | "p";
+  as?: "div" | "section" | "article" | "blockquote" | "span" | "p" | "h2" | "h3";
 };
 
 export function Reveal({

@@ -3,60 +3,48 @@
 import { Reveal } from "./FadeUp";
 import styles from "./Principi.module.css";
 
-const principles = [
+const items = [
   {
-    id: "01",
-    title: "Idee",
+    num: "01",
     label: "Struttura",
-    text: "Le idee hanno bisogno di struttura per diventare reali. Un\u2019organizzazione \u00e8 il luogo dove questo accade \u2014 quando \u00e8 pensata per funzionare.",
+    title: "Dare forma alle idee",
+    text: "Le idee hanno bisogno di struttura per diventare azione. Progettiamo percorsi chiari tra l'intuizione e il risultato.",
   },
   {
-    id: "02",
-    title: "Persone",
+    num: "02",
     label: "Competenze",
-    text: "Gli strumenti passano. Le competenze restano. La differenza non sta in ci\u00f2 che si adotta, ma in ci\u00f2 che si \u00e8 in grado di fare.",
+    title: "Coltivare capacità",
+    text: "Le competenze sono il patrimonio più concreto di un'organizzazione. Aiutiamo a identificarle, svilupparle e metterle in circolo.",
   },
   {
-    id: "03",
-    title: "Cambiamento",
+    num: "03",
     label: "Organizzazione",
-    text: "Il cambiamento non riguarda solo la tecnologia. Riguarda il modo in cui lavoriamo, decidiamo, collaboriamo. Riguarda l\u2019organizzazione.",
+    title: "Costruire condizioni",
+    text: "Il modo in cui un'organizzazione è strutturata determina ciò che può ottenere. Lavoriamo sulle condizioni che rendono possibili i risultati.",
   },
   {
-    id: "04",
-    title: "Adattamento",
-    label: "Capacit\u00e0",
-    text: "La capacit\u00e0 di adattamento non si acquista. Si costruisce \u2014 con scelte consapevoli, processi essenziali, persone valorizzate.",
+    num: "04",
+    label: "Capacità",
+    title: "Sviluppare adattamento",
+    text: "La capacità di adattarsi non è un evento — è una competenza che si costruisce nel tempo, attraverso pratica e attenzione.",
   },
 ];
 
 export function Principi() {
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
-        <div className={styles.header}>
-          <Reveal>
-            <span className={styles.sectionLabel}>Principi</span>
-          </Reveal>
-          <Reveal delay={2}>
-            <h2 className={styles.sectionTitle}>
-              Quattro dimensioni<br />
-              <em className={styles.italic}>dell&rsquo;evoluzione.</em>
-            </h2>
-          </Reveal>
-        </div>
+      <div className={styles.container}>
+        <Reveal as="p" className={styles.header}>
+          Quattro dimensioni dell'evoluzione
+        </Reveal>
 
         <div className={styles.grid}>
-          {principles.map((p, i) => (
-            <Reveal key={p.id} as="article" delay={(i + 1) as 1 | 2 | 3 | 4}>
-              <div className={styles.card}>
-                <div className={styles.cardTop}>
-                  <span className={styles.id}>{p.id}</span>
-                  <span className={styles.label}>{p.label}</span>
-                </div>
-                <h3 className={styles.title}>{p.title}</h3>
-                <p className={styles.text}>{p.text}</p>
-              </div>
+          {items.map((item) => (
+            <Reveal key={item.num} as="article" className={styles.card}>
+              <div className={styles.cardNum}>{item.num}</div>
+              <div className={styles.cardLabel}>{item.label}</div>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <p className={styles.cardText}>{item.text}</p>
             </Reveal>
           ))}
         </div>

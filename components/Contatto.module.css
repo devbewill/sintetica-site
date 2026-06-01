@@ -1,88 +1,81 @@
+/* ═══════════════════════════════════════════════════
+   Contatto — Dark, geometric grotesque
+   ═══════════════════════════════════════════════════ */
+
 .section {
-  background: var(--color-bg-dark);
-  padding: var(--space-3xl) 0;
   position: relative;
+  background: var(--color-bg-dark);
+  padding: var(--space-3xl) var(--space-sm);
   overflow: hidden;
 }
 
-/* Subtle warm glow (mirrors Spazio) */
-.section::before {
-  content: '';
+.glow {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 93, 62, 0.05) 0%, transparent 70%);
-  bottom: -20%;
-  right: -10%;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 50% 60% at 50% 60%,
+    rgba(196, 85, 58, 0.05) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
-.inner {
-  width: var(--container);
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
 .content {
-  max-width: 560px;
+  position: relative;
+  width: var(--container-narrow);
+  max-width: 680px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* ─── Label ─── */
 .label {
-  display: block;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-fg-dim);
   margin-bottom: var(--space-md);
 }
 
-/* ─── Text ─── */
-.text {
-  font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.65;
-  color: var(--color-fg-dim);
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-fg-on-dark);
   margin-bottom: var(--space-lg);
 }
 
-/* ─── Email ─── */
 .email {
-  display: inline-block;
-  font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 400;
-  color: var(--color-fg-on-dark);
-  position: relative;
-  transition: color 0.3s ease;
+  margin-bottom: var(--space-md);
 }
 
-.email::after {
+.emailLink {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-fg-on-dark);
+  position: relative;
+  display: inline-block;
+}
+
+.emailLink::after {
   content: '';
   position: absolute;
-  bottom: -0.1em;
+  bottom: -4px;
   left: 0;
-  width: 100%;
-  height: 1px;
+  right: 0;
+  height: 1.5px;
   background: var(--color-accent);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.email:hover {
-  color: var(--color-accent);
-}
-
-.email:hover::after {
+.emailLink:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -91,20 +84,21 @@
   color: var(--color-accent);
 }
 
-/* ─── Meta ─── */
-.meta {
-  margin-top: var(--space-lg);
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
+.location {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--color-fg-dim);
-  opacity: 0.6;
 }
 
-/* ─── Responsive ─── */
+/* ─── Responsive ────────────────────────────────── */
 @media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
   .content {
-    text-align: left;
+    width: var(--container);
   }
 }

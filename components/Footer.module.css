@@ -1,11 +1,16 @@
+/* ═══════════════════════════════════════════════════
+   Footer — Minimal grotesque
+   ═══════════════════════════════════════════════════ */
+
 .footer {
-  padding: 1.5rem 0;
   background: var(--color-bg);
+  padding: var(--space-lg) var(--space-sm);
   border-top: 1px solid var(--color-border);
 }
 
 .inner {
   width: var(--container);
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -19,40 +24,27 @@
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--color-fg);
 }
 
-.accent {
+.dot {
   color: var(--color-accent);
 }
 
 .copy {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
   color: var(--color-fg-muted);
-  letter-spacing: 0.05em;
-}
-
-.right {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
 }
 
 .tagline {
-  font-family: var(--font-serif);
-  font-size: 0.8rem;
-  font-style: italic;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   color: var(--color-fg-muted);
-}
-
-.dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--color-accent);
 }

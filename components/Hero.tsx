@@ -3,51 +3,44 @@
 import { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 
+const words = ["Dare", "forma", "al", "cambiamento."];
+
 export function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const el = titleRef.current;
-    if (!el) return;
-
-    const spans = el.querySelectorAll(`.${styles.word}`);
-
-    // Staggered entrance
     const timer = setTimeout(() => {
-      spans.forEach((span, i) => {
-        (span as HTMLElement).style.transitionDelay = `${i * 0.12}s`;
-        (span as HTMLElement).classList.add(styles["word--visible"]);
+      document.querySelectorAll(`.${styles.word}`).forEach((el, i) => {
+        setTimeout(() => el.classList.add(styles.wordVisible), i * 180);
       });
     }, 200);
-
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} ref={heroRef}>
       <div className={styles.inner}>
-        <div className={styles.label}>
-          <span className={styles.dot} />
-          <span>Organizzazione &middot; Persone &middot; Struttura</span>
-        </div>
+        <p className={styles.label}>
+          <span className="dot" />
+          Organizzazione · Persone · Struttura
+        </p>
 
-        <h1 ref={titleRef} className={styles.title}>
-          <span className={styles.line}>
-            <span className={styles.word}>Dare</span>{" "}
-            <span className={styles.word}>forma</span>
-          </span>
-          <span className={styles.line}>
-            <span className={styles.word}>al</span>{" "}
-            <span className={styles.word}>cambiamento.</span>
-          </span>
+        <h1 className={styles.title}>
+          {words.map((word, i) => (
+            <span key={i} className={styles.word} style={{ transitionDelay: `${i * 0.12}s` }}>
+              {word}
+            </span>
+          ))}
         </h1>
 
-        <div className={styles.bottom}>
-          <p className={styles.subtitle}>Le idee generano possibilit&agrave;.</p>
-          <div className={styles.scrollHint}>
-            <div className={styles.scrollLine} />
-          </div>
-        </div>
+        <p className={styles.subtitle}>
+          Le idee generano possibilità.<br />
+          Aiutiamo le organizzazioni a dar loro struttura.
+        </p>
+      </div>
+
+      <div className={styles.scroll}>
+        <span className={styles.scrollLine} />
       </div>
     </section>
   );

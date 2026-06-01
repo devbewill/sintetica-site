@@ -5,15 +5,10 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <span className={styles.logo}>
-            S<span className={styles.accent}>.</span>
-          </span>
-          <span className={styles.copy}>&copy; 2026</span>
+          <span className={styles.logo}>S<span className={styles.dot}>.</span></span>
+          <span className={styles.copy}>© 2026</span>
         </div>
-        <div className={styles.right}>
-          <span className={styles.tagline}>Idee &amp; struttura</span>
-          <span className={styles.dot} aria-hidden="true" />
-        </div>
+        <p className={styles.tagline}>Idee & struttura</p>
       </div>
     </footer>
   );

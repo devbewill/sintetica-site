@@ -1,54 +1,47 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Reveal, LineReveal } from "./FadeUp";
 import styles from "./Spazio.module.css";
 
+const lines = [
+  "Tra l'intuizione e l'esecuzione",
+  "esiste uno spazio.",
+  "Dove le possibilità trovano struttura.",
+];
+
 export function Spazio() {
-  const linesRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const container = linesRef.current;
-    if (!container) return;
-
+    const el = sectionRef.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const lines = container.querySelectorAll(`.${styles.quoteLine}`);
-          lines.forEach((line, i) => {
-            (line as HTMLElement).style.transitionDelay = `${i * 0.15}s`;
-            (line as HTMLElement).classList.add(styles["quoteLine--visible"]);
-          });
-          observer.unobserve(container);
+          el.classList.add(styles.visible);
+          observer.unobserve(el);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.25 }
     );
-
-    observer.observe(container);
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className={styles.spazio}>
-      <div className={styles.inner}>
-        <div className={styles.content}>
-          <span className={styles.number}>01</span>
-          <LineReveal width="2rem" className={styles.accentLine} />
-
-          <div ref={linesRef} className={styles.quote}>
-            <p className={styles.quoteLine}>Tra l&rsquo;intuizione e l&rsquo;esecuzione</p>
-            <p className={styles.quoteLine}>esiste uno spazio.</p>
-            <p className={`${styles.quoteLine} ${styles.quoteLineAlt}`}>
-              Dove le possibilit&agrave; trovano struttura.
-            </p>
-          </div>
-
-          <div className={styles.credit}>
-            <span className={styles.emDash}>&mdash;</span>
-            <span>Il principio fondativo</span>
-          </div>
-        </div>
+    <section className={styles.section} ref={sectionRef}>
+      <div className={styles.glow} />
+      <div className={styles.content}>
+        {lines.map((line, i) => (
+          <p
+            key={i}
+            className={`${styles.line} ${i === lines.length - 1 ? styles.lineAccent : ""}`}
+            style={{ transitionDelay: `${i * 0.2}s` }}
+          >
+            {line}
+          </p>
+        ))}
+        <p className={styles.attribution}>— Il principio fondativo</p>
       </div>
     </section>
   );
