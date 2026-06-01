@@ -1,0 +1,55 @@
+.spazio {
+  background: var(--color-bg-dark);
+  padding: var(--space-3xl) 0;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.mark {
+  position: absolute;
+  top: -1rem;
+  left: -0.05em;
+  font-size: 12rem;
+  font-weight: 300;
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+.text {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--color-fg-dark);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .mark {
+    font-size: 7rem;
+    top: -0.5rem;
+  }
+
+  .text {
+    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+  }
+
+  .content {
+    padding: var(--space-lg) 0;
+  }
+}
