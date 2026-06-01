@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════════════════
-   Principi — Swiss grid, white bg, red numbers
+   Principi — All white, red numbers/labels
    ═══════════════════════════════════════════════════ */
 
 .section {
-  padding: var(--s10) var(--s2);
+  padding: var(--s10) 0;
   background: var(--color-white);
 }
 
@@ -87,5 +87,4 @@
     padding: var(--s2) var(--s2) var(--s3);
   }
   .header { font-size: clamp(1.5rem, 7vw, 2.5rem); }
-  .container { width: var(--container); }
 }

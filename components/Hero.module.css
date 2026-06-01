@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--s6) var(--s2);
+  padding: var(--s6) 0;
   background: var(--color-white);
 }
 
@@ -16,6 +16,7 @@
   width: var(--container);
   margin: 0 auto;
   max-width: 1100px;
+  text-align: center;
 }
 
 /* ── Brand name: enorme, centrato ── */
@@ -82,7 +83,7 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
-    padding: var(--s6) var(--s2) var(--s4);
+    padding: var(--s6) 0 var(--s4);
   }
   .brand {
     font-size: clamp(3.2rem, 18vw, 6rem);
