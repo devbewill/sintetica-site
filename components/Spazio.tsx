@@ -3,12 +3,6 @@
 import { useEffect, useRef } from "react";
 import styles from "./Spazio.module.css";
 
-const lines = [
-  "Tra l'intuizione e l'esecuzione",
-  "esiste uno spazio.",
-  "Dove le possibilità trovano struttura.",
-];
-
 export function Spazio() {
   const ref = useRef<HTMLElement>(null);
 
@@ -22,7 +16,7 @@ export function Spazio() {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -31,19 +25,21 @@ export function Spazio() {
   return (
     <section className={styles.section} ref={ref}>
       <div className={styles.inner}>
-        {lines.map((line, i) => (
-          <p
-            key={i}
-            className={`${styles.line} ${i === 2 ? styles.accentLine : ""}`}
-            style={{ transitionDelay: `${i * 0.15}s` }}
-          >
-            {line}
+        <div className={styles.content}>
+          <p className={styles.line} style={{ transitionDelay: "0s" }}>
+            Tra l&apos;intuizione e l&apos;esecuzione
           </p>
-        ))}
-        <div className={styles.sep} />
-        <p className={styles.attr} style={{ transitionDelay: "0.5s" }}>
-          Il principio fondativo
-        </p>
+          <p className={styles.line} style={{ marginLeft: "8%", transitionDelay: "0.15s" }}>
+            esiste uno spazio.
+          </p>
+          <p className={`${styles.line} ${styles.accent}`} style={{ marginLeft: "16%", transitionDelay: "0.3s" }}>
+            Dove le possibilità trovano struttura.
+          </p>
+          <div className={styles.sep} style={{ transitionDelay: "0.5s" }} />
+          <p className={styles.attr} style={{ transitionDelay: "0.6s" }}>
+            Il principio fondativo
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -24,8 +24,8 @@ const items = [
   },
   {
     num: "04",
-    label: "Capacità",
-    title: "Sviluppare adattamento",
+    label: "Adattamento",
+    title: "Sviluppare resilienza",
     text: "La capacità di adattarsi non è un evento — è una competenza che si costruisce nel tempo, attraverso pratica e attenzione.",
   },
 ];
@@ -35,15 +35,19 @@ export function Principi() {
     <section className={styles.section}>
       <div className={styles.container}>
         <Reveal as="h2" className={styles.header}>
-          Quattro dimensioni<span className={styles.headerSpan}>.</span>
+          Quattro dimensioni<span className={styles.headerAccent}>.</span>
         </Reveal>
-        <div className={styles.grid}>
-          {items.map((item) => (
-            <Reveal key={item.num} as="article" className={styles.card}>
-              <div className={styles.cardNum}>{item.num}</div>
-              <div className={styles.cardLabel}>{item.label}</div>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardText}>{item.text}</p>
+        <div className={styles.list}>
+          {items.map((item, i) => (
+            <Reveal key={item.num} delay={(i + 1) as 1 | 2 | 3 | 4 | 5} className={styles.item}>
+              <div className={styles.itemLeft}>
+                <span className={styles.itemNum}>{item.num}</span>
+                <span className={styles.itemLabel}>{item.label}</span>
+              </div>
+              <div className={styles.itemRight}>
+                <h3 className={styles.itemTitle}>{item.title}</h3>
+                <p className={styles.itemText}>{item.text}</p>
+              </div>
             </Reveal>
           ))}
         </div>

@@ -1,4 +1,4 @@
-/* ── Contatto ── Left-aligned, generous whitespace ── */
+/* ── Contatto ── Generous whitespace, line accent ── */
 
 .section {
   padding: var(--sp-10) 0;
@@ -12,14 +12,26 @@
   padding-inline: var(--container-pad);
 }
 
+.top {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-7);
+}
+
+.line {
+  width: 2rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
 .label {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: var(--sp-5);
 }
 
 .heading {
@@ -30,20 +42,23 @@
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: var(--color-text);
-  margin-bottom: var(--sp-6);
+  margin-bottom: var(--sp-8);
 }
 
 .period { color: var(--color-accent); }
 
-.emailWrap {
-  margin-bottom: var(--sp-4);
+.details {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-6);
 }
+
+.emailWrap {}
 
 .emailLink {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   font-weight: 400;
-  letter-spacing: 0.01em;
   color: var(--color-text);
   position: relative;
   display: inline-block;
@@ -76,5 +91,12 @@
 
 @media (max-width: 768px) {
   .section { padding: var(--sp-8) 0; }
-  .heading { font-size: clamp(2rem, 10vw, 3rem); }
+  .heading {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: var(--sp-6);
+  }
+  .details {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
 }

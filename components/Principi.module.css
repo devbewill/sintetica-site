@@ -1,4 +1,4 @@
-/* ── Principi ── 2-col grid, warm, borders ── */
+/* ── Principi ── Stacked editorial, horizontal rows ── */
 
 .section {
   padding: var(--sp-10) 0;
@@ -14,63 +14,88 @@
 
 .header {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--color-text);
-  margin-bottom: var(--sp-7);
+  margin-bottom: var(--sp-8);
 }
 
-.headerSpan { color: var(--color-accent); }
+.headerAccent { color: var(--color-accent); }
 
-.grid {
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 200px 1fr;
+  gap: var(--sp-6);
+  padding: var(--sp-6) 0;
   border-top: 1px solid var(--color-border);
+  align-items: start;
 }
 
-.card {
-  padding: var(--sp-6);
+.item:last-child {
   border-bottom: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
 }
 
-.card:nth-child(2n) { border-right: none; }
+.itemLeft {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding-top: 0.15rem;
+}
 
-.cardNum {
+.itemNum {
   font-family: var(--font-display);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--color-accent);
-  margin-bottom: var(--sp-3);
 }
 
-.cardLabel {
+.itemLabel {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.itemRight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.itemTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
   font-weight: 700;
+  line-height: 1.25;
   letter-spacing: -0.01em;
   color: var(--color-text);
-  margin-bottom: var(--sp-2);
 }
 
-.cardText {
+.itemText {
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.7;
   color: var(--color-text-muted);
-  max-width: 380px;
+  max-width: 480px;
 }
 
 @media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; }
-  .card {
-    border-right: none;
+  .section { padding: var(--sp-8) 0; }
+  .item {
+    grid-template-columns: 1fr;
+    gap: var(--sp-2);
     padding: var(--sp-5) 0;
   }
-  .header { font-size: clamp(1.4rem, 6vw, 2rem); }
-  .container { padding-inline: var(--container-pad); }
+  .header { font-size: clamp(1.3rem, 6vw, 1.8rem); }
 }

@@ -9,25 +9,31 @@ export function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       document.querySelectorAll(`.${styles.r}`).forEach((el, i) => {
-        setTimeout(() => el.classList.add(styles.rV), i * 150);
+        setTimeout(() => el.classList.add(styles.rV), i * 200);
       });
-    }, 100);
+    }, 200);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className={styles.hero} ref={ref}>
       <div className={styles.inner}>
-        <p className={`${styles.kicker} ${styles.r}`}>
-          Organizzazione · Persone · Struttura
-        </p>
-        <h1 className={styles.brand}>
-          <span className={styles.r}>Sintetica</span>
-          <span className={styles.dot}>.</span>
-        </h1>
-        <p className={`${styles.tagline} ${styles.r}`}>
-          Dare forma al cambiamento<span className={styles.dot}>.</span>
-        </p>
+        <div className={styles.top}>
+          <p className={`${styles.kicker} ${styles.r}`}>
+            Organizzazione · Persone · Struttura
+          </p>
+        </div>
+        <div className={styles.bottom}>
+          <h1 className={`${styles.brand} ${styles.r}`}>
+            Sintetica<span className={styles.dot}>.</span>
+          </h1>
+          <div className={styles.right}>
+            <div className={styles.rule} />
+            <p className={`${styles.tagline} ${styles.r}`}>
+              Dare forma al cambiamento<span className={styles.dot}>.</span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

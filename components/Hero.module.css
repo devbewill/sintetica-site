@@ -1,60 +1,92 @@
-/* ── Hero ── Brand giant, tagline below, warm bg ── */
+/* ── Hero ── Brand bottom-left, tagline right, diagonal tension ── */
 
 .hero {
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--sp-10) 0;
+  align-items: flex-end;
+  padding: 0;
   background: var(--color-bg);
 }
 
 .inner {
+  width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 6rem;
+  padding-bottom: var(--sp-9);
+}
+
+.top {
+  width: 100%;
 }
 
 .kicker {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: var(--sp-5);
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-6);
 }
 
 .brand {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 14vw, 11rem);
+  font-size: clamp(4rem, 13vw, 10rem);
   font-weight: 800;
-  line-height: 0.9;
+  line-height: 0.88;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--color-text);
-  margin-bottom: var(--sp-7);
+  flex-shrink: 0;
 }
 
 .dot { color: var(--color-accent); }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--sp-4);
+  padding-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.rule {
+  width: 2rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
 .tagline {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.75rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 300;
+  line-height: 1.5;
   color: var(--color-text-secondary);
-  line-height: 1.4;
+  text-align: right;
+  max-width: 260px;
 }
 
 /* ── Reveal ── */
 .r {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s var(--ease),
-              transform 0.7s var(--ease);
+  transform: translateY(18px);
+  transition: opacity 0.8s var(--ease),
+              transform 0.8s var(--ease);
 }
 .rV {
   opacity: 1;
@@ -63,10 +95,23 @@
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
-  .hero { padding: var(--sp-9) 0 var(--sp-7); }
-  .brand {
-    font-size: clamp(3rem, 16vw, 5rem);
-    margin-bottom: var(--sp-5);
+  .inner {
+    padding-top: 5rem;
+    padding-bottom: var(--sp-7);
   }
-  .tagline { font-size: clamp(1rem, 4.5vw, 1.3rem); }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-5);
+  }
+  .brand {
+    font-size: clamp(3.5rem, 18vw, 6rem);
+  }
+  .right {
+    align-items: flex-start;
+  }
+  .tagline {
+    text-align: left;
+    max-width: 100%;
+  }
 }
