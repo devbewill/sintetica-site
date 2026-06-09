@@ -21,7 +21,7 @@ export function Statement({
   variant = "split",
 }: Props) {
   return (
-    <section className={`${styles.section} ${styles[variant]}`}>
+    <section className={`${styles.section} ${styles[variant]}`} id="manifesto">
       <div className={styles.inner}>
         <Reveal as="span" className={styles.num}>{num}</Reveal>
         <div className={styles.titleBlock}>

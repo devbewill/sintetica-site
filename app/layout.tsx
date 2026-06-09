@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter_Tight, Geist } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
-const body = Inter({
+const body = Inter_Tight({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-body",
   display: "swap",
 });
 
-const display = Outfit({
+const display = Geist({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sintetica",
+  title: "Sintetica — Semplificare per crescere.",
   description:
-    "Dare forma al cambiamento. Sintetica aiuta le organizzazioni a evolvere il proprio modo di lavorare.",
+    "Sintetica rimuove la complessità organizzativa con AI e know-how. Meno rumore, più fuoco, risultati misurabili.",
 };
 
 export default function RootLayout({

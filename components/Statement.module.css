@@ -1,27 +1,10 @@
-/* ── Statement v12: each section has its own spatial personality ── */
+/* ── Statement v2: tightened to new system ── */
 
 .section {
   padding: var(--sp-11) 0;
   background: transparent;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-strong);
   position: relative;
-}
-
-.section::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: var(--color-accent);
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.8s var(--ease), opacity 0.8s var(--ease);
-}
-
-.section:hover::before {
-  opacity: 1;
-  transform: scaleY(1);
 }
 
 .inner {
@@ -37,19 +20,19 @@
 .num {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 7vw, 6rem);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 0.8;
   letter-spacing: -0.06em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(215, 25, 22, 0.5);
+  -webkit-text-stroke: 1.5px rgba(230, 0, 0, 0.55);
 }
 
 .titleBlock { display: flex; flex-direction: column; gap: var(--sp-4); }
 
 .eyebrow {
   font-family: var(--font-display);
-  font-size: 0.62rem;
-  font-weight: 700;
+  font-size: 0.7rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -57,10 +40,10 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.7rem, 7.5vw, 6.9rem);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.6rem, 7vw, 6.4rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--color-text);
   max-width: 720px;
@@ -71,14 +54,13 @@
 .text {
   font-family: var(--font-body);
   font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  font-weight: 300;
-  line-height: 1.8;
+  font-weight: 400;
+  line-height: 1.7;
   color: var(--color-text-secondary);
   max-width: 30rem;
   padding-top: 0.4rem;
 }
 
-/* Poster: large title, text pulled down/right — creates a break in rhythm */
 .poster { padding: clamp(8rem, 18vw, 15rem) 0; }
 .poster .inner {
   grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr);
@@ -89,7 +71,7 @@
 }
 .poster .num { grid-area: num; justify-self: end; }
 .poster .titleBlock { grid-area: title; }
-.poster .title { font-size: clamp(3.2rem, 10vw, 8.8rem); max-width: 800px; }
+.poster .title { font-size: clamp(3.2rem, 10vw, 8.4rem); max-width: 800px; }
 .poster .text {
   grid-area: text;
   max-width: 42rem;
@@ -98,7 +80,6 @@
   padding-left: var(--sp-5);
 }
 
-/* Quiet: one-column breath after the signature moment */
 .quiet { padding: var(--sp-10) 0; }
 .quiet .inner {
   max-width: 860px;

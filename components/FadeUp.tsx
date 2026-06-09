@@ -5,8 +5,8 @@ import { useEffect, useRef, createElement, type ReactNode } from "react";
 type Props = {
   children: ReactNode;
   className?: string;
-  delay?: 1 | 2 | 3 | 4 | 5;
-  as?: "div" | "section" | "article" | "blockquote" | "span" | "p" | "h2" | "h3";
+  delay?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  as?: "div" | "section" | "article" | "blockquote" | "span" | "p" | "h2" | "h3" | "li";
 };
 
 export function Reveal({

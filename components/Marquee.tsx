@@ -8,17 +8,17 @@ export function Marquee() {
           <span key={i} className={styles.inner}>
             Sintetica
             <span className={styles.sep}>◆</span>
-            Idee
+            Semplificare
             <span className={styles.sep}>◆</span>
-            Struttura
+            Rimuovere
             <span className={styles.sep}>◆</span>
-            Possibilità
+            Accendere
             <span className={styles.sep}>◆</span>
-            Persone
+            Governance
             <span className={styles.sep}>◆</span>
-            Processi
+            AI
             <span className={styles.sep}>◆</span>
-            Adattamento
+            Risultati
             <span className={styles.sep}>◆</span>
           </span>
         ))}

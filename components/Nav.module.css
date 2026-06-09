@@ -1,4 +1,4 @@
-/* ── Nav ── Fixed, warm bg, clean ── */
+/* ── Nav v2 ── */
 
 .nav {
   position: fixed;
@@ -6,48 +6,142 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1.25rem 0;
-  background: var(--color-bg);
+  padding: 1rem 0;
+  background: transparent;
+  transition: background var(--dur-base) var(--ease),
+              backdrop-filter var(--dur-base) var(--ease),
+              border-color var(--dur-base) var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgba(247, 247, 247, 0.88);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom-color: var(--color-border);
 }
 
 .inner {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--sp-6);
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 800;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: var(--color-text);
+}
+
+.logoMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 0;
 }
 
 .dot { color: var(--color-accent); }
 
-.cta {
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2.5vw, 2.4rem);
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
   font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text);
+  position: relative;
   padding: 0.4rem 0;
-  border-bottom: 1px solid var(--color-border);
-  transition: color var(--dur-base) var(--ease),
-              border-color var(--dur-base) var(--ease);
+  transition: color var(--dur-base) var(--ease);
+}
+
+.linkIndex {
+  font-size: 0.6rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.link:hover { color: var(--color-accent); }
+.link:hover::after { transform: scaleX(1); }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  padding: 0.6rem 1.1rem;
+  border: 1.5px solid var(--color-text);
+  border-radius: 999px;
+  transition: background var(--dur-base) var(--ease),
+              color var(--dur-base) var(--ease),
+              transform var(--dur-base) var(--ease);
 }
 
 .cta:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-text);
+  color: var(--color-bg);
+  transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
-  .nav { padding: 1rem 0; }
+.ctaArrow {
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .links { display: none; }
+  .inner { grid-template-columns: auto 1fr; }
+}
+
+@media (max-width: 480px) {
+  .logoText { display: none; }
+  .cta { padding: 0.5rem 0.9rem; font-size: 0.72rem; }
 }

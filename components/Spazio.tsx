@@ -25,20 +25,20 @@ export function Spazio() {
   return (
     <section className={styles.section} ref={ref}>
       <div className={styles.inner}>
-        <p className={styles.label}>Il punto di sintesi</p>
+        <p className={styles.label}>Punto di sintesi</p>
         <div className={styles.content}>
           <p className={styles.line} style={{ transitionDelay: "0s" }}>
-            Tra l&apos;intuizione
+            Tra il rumore
           </p>
           <p className={styles.line} style={{ transitionDelay: "0.12s" }}>
-            e l&apos;esecuzione
+            e il fuoco
           </p>
           <p className={styles.line} style={{ transitionDelay: "0.24s" }}>
             esiste uno spazio<span className={styles.accent}>.</span>
           </p>
         </div>
         <p className={styles.note} style={{ transitionDelay: "0.42s" }}>
-          È lì che Sintetica lavora: dove le possibilità trovano struttura.
+          È lì che Sintetica lavora: dove la complessità si dissolve e l&apos;energia si riaccende.
         </p>
       </div>
     </section>

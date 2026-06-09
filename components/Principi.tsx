@@ -5,28 +5,24 @@ import styles from "./Principi.module.css";
 
 const items = [
   {
-    num: "01",
-    label: "Struttura",
-    title: "Dare forma alle idee",
-    text: "Le idee diventano utili quando trovano sequenza, responsabilità e criteri di scelta.",
+    num: "Rimuovere",
+    title: "Togliere prima di aggiungere",
+    text: "Ogni intervento parte dal togliere: processi ereditati, strumenti ridondanti, riunioni senza scopo. Meno è di più.",
   },
   {
-    num: "02",
-    label: "Competenze",
-    title: "Rendere visibile il sapere",
-    text: "Le capacità già presenti nell'organizzazione vengono riconosciute, collegate e messe in movimento.",
+    num: "Ascoltare",
+    title: "Decisioni su evidenze, non su impressioni",
+    text: "AI e dati ci dicono cosa funziona e cosa no. Le scelte si basano su fatti, non su mode o abitudini consolidate.",
   },
   {
-    num: "03",
-    label: "Processi",
-    title: "Togliere attrito",
-    text: "Il lavoro scorre meglio quando passaggi, decisioni e strumenti sono coerenti tra loro.",
+    num: "Accendere",
+    title: "Il cambiamento parte dalle persone",
+    text: "Il cambiamento più potente è quello che le persone sentono proprio. Lavoriamo su commitment, ownership e chiarezza.",
   },
   {
-    num: "04",
-    label: "Adattamento",
-    title: "Costruire continuità",
-    text: "Il cambiamento non resta episodio: diventa metodo, ritmo, capacità interna.",
+    num: "Mantenere",
+    title: "Il fuoco resta acceso",
+    text: "Il progetto non finisce quando ce ne andiamo. Governance, misurazione, adattamento continuo: perché il valore non si spenga.",
   },
 ];
 
@@ -35,22 +31,21 @@ export function Principi() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.head}>
-          <Reveal as="p" className={styles.kicker}>Come lavoriamo</Reveal>
+          <Reveal as="p" className={styles.kicker}>
+            <span className={styles.kickerLine} />
+            Principi
+          </Reveal>
           <Reveal as="h2" delay={1} className={styles.header}>
-            Quattro leve, una direzione<span className={styles.headerAccent}>.</span>
+            Niente scorciatoie<span className={styles.accent}>.</span>
           </Reveal>
         </div>
         <div className={styles.list}>
           {items.map((item, i) => (
-            <Reveal key={item.num} delay={(i + 1) as 1 | 2 | 3 | 4 | 5} className={styles.item}>
-              <div className={styles.itemLeft}>
-                <span className={styles.itemNum}>{item.num}</span>
-                <span className={styles.itemLabel}>{item.label}</span>
-              </div>
-              <div className={styles.itemRight}>
-                <h3 className={styles.itemTitle}>{item.title}</h3>
-                <p className={styles.itemText}>{item.text}</p>
-              </div>
+            <Reveal key={item.num} delay={((i % 4) + 1) as 1 | 2 | 3 | 4} className={styles.item}>
+              <span className={styles.itemLabel}>{item.num}</span>
+              <h3 className={styles.itemTitle}>{item.title}</h3>
+              <p className={styles.itemText}>{item.text}</p>
+              <span className={styles.itemArrow} aria-hidden="true">→</span>
             </Reveal>
           ))}
         </div>

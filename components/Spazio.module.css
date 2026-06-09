@@ -1,11 +1,11 @@
-/* ── Spazio v12: signature moment — monumental, bottom-anchored, cut by red ── */
+/* ── Spazio v2: monumental, darker, red cut ── */
 
 .section {
-  min-height: 92vh;
+  min-height: 90vh;
   display: flex;
   align-items: stretch;
   padding: 0;
-  background: var(--color-text);
+  background: var(--color-ink);
   color: var(--color-bg);
   position: relative;
   overflow: hidden;
@@ -19,14 +19,16 @@
   width: clamp(14rem, 42vw, 34rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1px solid rgba(252, 250, 246, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   z-index: -1;
 }
 
 .section::after {
   content: "";
   position: absolute;
-  inset: 0 0 0 auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
   width: clamp(0.8rem, 2vw, 1.5rem);
   background: var(--color-accent);
   transform: scaleY(0);
@@ -52,10 +54,10 @@
   align-self: start;
   font-family: var(--font-display);
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(252, 250, 246, 0.48);
+  color: rgba(255, 255, 255, 0.45);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   opacity: 0;
@@ -73,9 +75,9 @@
 .line {
   font-family: var(--font-display);
   font-size: clamp(3.1rem, 11vw, 10.2rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 0.78;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.07em;
   text-transform: uppercase;
   color: var(--color-bg);
   opacity: 0;
@@ -99,9 +101,9 @@
   margin-left: auto;
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.4vw, 1.22rem);
-  font-weight: 300;
-  line-height: 1.75;
-  color: rgba(252, 250, 246, 0.72);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
@@ -119,13 +121,12 @@
     writing-mode: horizontal-tb;
     transform: none;
   }
-  .content,
-  .note { grid-column: 1; }
+  .content, .note { grid-column: 1; }
   .note { margin-left: 0; }
 }
 
 @media (max-width: 640px) {
-  .section { min-height: 78vh; }
+  .section { min-height: 75vh; }
   .inner { padding: var(--sp-8) var(--container-pad); }
   .line { font-size: clamp(3rem, 16vw, 5.8rem); }
   .line:nth-child(2), .line:nth-child(3) { margin-left: 0; }
