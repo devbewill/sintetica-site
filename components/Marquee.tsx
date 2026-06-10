@@ -12,7 +12,7 @@ export function Marquee() {
             <span className={styles.sep}>◆</span>
             Rimuovere
             <span className={styles.sep}>◆</span>
-            Accendere
+            Attivare
             <span className={styles.sep}>◆</span>
             Governance
             <span className={styles.sep}>◆</span>

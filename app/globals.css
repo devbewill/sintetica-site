@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
-   Sintetica — v2.0 / Swiss Monochrome + Pop
-   Pure grayscale · signal red accent · Geist
+   Sintetica — editorial system
+   Warm paper · ink · single vermilion accent · Geist
    ═══════════════════════════════════════════════════ */
 
 @layer reset, base, components, utilities;
@@ -35,19 +35,25 @@
 
 @layer base {
   :root {
-    /* ── Colors — monochrome grayscale + signal red pop ── */
-    --color-bg:      #F7F7F7;
-    --color-surface: #ECECEC;
+    /* ── Colors — one accent only ── */
+    --color-bg:      #F5F1EA;
+    --color-surface: #E9E1D6;
     --color-paper:   #FFFFFF;
     --color-border:  rgba(10, 10, 10, 0.10);
     --color-border-strong: rgba(10, 10, 10, 0.20);
     --color-text:    #0A0A0A;
     --color-text-secondary: #525252;
     --color-text-muted: #8A8A8A;
-    --color-accent:  #E60000;
-    --color-accent-deep: #B30000;
+    --color-accent:  #E22B1F;
+    --color-accent-deep: #9F1D16;
     --color-ink:     #0A0A0A;
     --color-white:   #FFFFFF;
+
+    /* ── Proportion ── */
+    --golden-minor: 38.2%;
+    --golden-major: 61.8%;
+    --section-pad: clamp(7rem, 13vw, 12rem);
+    --measure: 42rem;
 
     /* ── Typography ── */
     --font-display: var(--font-display), "Geist", system-ui, sans-serif;

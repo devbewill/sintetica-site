@@ -21,7 +21,7 @@ const display = Geist({
 export const metadata: Metadata = {
   title: "Sintetica — Semplificare per crescere.",
   description:
-    "Sintetica rimuove la complessità organizzativa con AI e know-how. Meno rumore, più fuoco, risultati misurabili.",
+    "Sintetica rimuove la complessità organizzativa con AI e know-how. Meno rumore, più direzione, risultati misurabili.",
 };
 
 export default function RootLayout({

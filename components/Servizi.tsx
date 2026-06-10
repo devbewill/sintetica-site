@@ -60,7 +60,7 @@ export function Servizi() {
           </Reveal>
           <Reveal as="p" delay={2} className={styles.lede}>
             Strategia, AI, processi, persone. Ogni intervento parte dal togliere
-            per arrivare ad accendere — sempre su misura.
+            per generare trazione — sempre su misura.
           </Reveal>
         </div>
 

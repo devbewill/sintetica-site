@@ -31,14 +31,14 @@ export function Spazio() {
             Tra il rumore
           </p>
           <p className={styles.line} style={{ transitionDelay: "0.12s" }}>
-            e il fuoco
+            e la direzione
           </p>
           <p className={styles.line} style={{ transitionDelay: "0.24s" }}>
             esiste uno spazio<span className={styles.accent}>.</span>
           </p>
         </div>
         <p className={styles.note} style={{ transitionDelay: "0.42s" }}>
-          È lì che Sintetica lavora: dove la complessità si dissolve e l&apos;energia si riaccende.
+          È lì che Sintetica lavora: dove la complessità si dissolve e l&apos;energia torna utilizzabile.
         </p>
       </div>
     </section>

@@ -29,7 +29,7 @@ const steps = [
     num: "04",
     label: "Adattamento",
     title: "Restiamo finché regge.",
-    text: "Governance, commitment, review cicliche. Il cambiamento diventa metodo interno. Il fuoco resta acceso.",
+    text: "Governance, commitment, review cicliche. Il cambiamento diventa metodo interno. La trazione resta misurabile.",
     deliverables: ["Adoption tracking", "Coaching", "Review cicliche"],
   },
 ];

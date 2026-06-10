@@ -23,7 +23,7 @@ export default function Home() {
 
       <Statement
         num="02"
-        title="La tecnologia serve, le persone accendono"
+        title="La tecnologia serve, le persone muovono"
         titleAccent="."
         text="L'AI non è il fine: è un acceleratore. La applichiamo dove toglie attrito, non dove aggiunge complessità. Automatizziamo il ripetitivo per liberare tempo al lavoro che conta."
         variant="poster"
@@ -35,7 +35,7 @@ export default function Home() {
         num="03"
         title="Governance, commitment, direzione"
         titleAccent="."
-        text="Il cambiamento regge se le persone lo abitano. Costruiamo governance chiara, gestiamo il commitment, diamo ritmo ai progetti. Il fuoco resta acceso solo se qualcuno lo custodisce."
+        text="Il cambiamento regge se le persone lo abitano. Costruiamo governance chiara, gestiamo il commitment, diamo ritmo ai progetti. La trazione continua solo se qualcuno la governa."
         variant="quiet"
       />
 

@@ -31,15 +31,10 @@ export function Hero() {
         </div>
 
         <div className={styles.stage}>
-          <span className={`${styles.ghost} ${styles.r}`} aria-hidden="true">forma</span>
-          <h1 className={`${styles.brand} ${styles.r}`}>
-            <span className={styles.line1}>
-              <span className={styles.l1a}>SIN</span>
-              <span className={styles.l1b}>TE</span>
-            </span>
-            <span className={styles.line2}>
-              <span className={styles.l2a}>TI</span>
-              <span className={styles.l2b}>CA<span className={styles.period}>.</span></span>
+          <h1 className={`${styles.brand} ${styles.r}`} aria-label="Sintetica.">
+            <span className={styles.brandLine} aria-hidden="true">SINTE</span>
+            <span className={`${styles.brandLine} ${styles.brandLineBottom}`} aria-hidden="true">
+              TICA<span className={styles.period}>.</span>
             </span>
           </h1>
         </div>
@@ -50,7 +45,7 @@ export function Hero() {
             <p className={styles.tagText}>
               Portiamo chiarezza dove c&apos;è rumore. Con AI e metodo
               rimuoviamo le <em>sovrastrutture</em> — tecnologiche e organizzative —
-              e puntiamo la lente su ciò che accende il fuoco.
+              e puntiamo la lente su ciò che rimette energia al lavoro.
             </p>
           </div>
 

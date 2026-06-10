@@ -1,9 +1,9 @@
 .strip {
   overflow: hidden;
-  border-top: 1px solid var(--color-light);
-  border-bottom: 1px solid var(--color-light);
-  padding: 0.7rem 0;
-  background: var(--color-white);
+  border-top: 1px solid rgba(10, 10, 10, 0.14);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.14);
+  padding: 0.85rem 0;
+  background: var(--color-bg);
 }
 
 .track {
@@ -11,31 +11,34 @@
   width: max-content;
   animation: marquee 45s linear infinite;
 }
-.track:hover { animation-play-state: paused; }
+
+.track:hover {
+  animation-play-state: paused;
+}
 
 .inner {
   display: flex;
   align-items: center;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-text);
 }
 
 .sep {
-  margin: 0 1.4rem;
-  width: 5px;
-  height: 5px;
-  background: var(--color-red);
-  border-radius: 50%;
   display: inline-block;
   flex-shrink: 0;
+  margin: 0 1.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-25%); }
+  to { transform: translateX(-25%); }
 }

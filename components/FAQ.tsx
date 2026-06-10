@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Cosa intendete per 'rimuovere complessità'?",
-    a: "Ogni organizzazione accumula strati nel tempo: tool ridondanti, processi ereditati, riunioni senza scopo. Noi identifichiamo e rimuoviamo tutto ciò che non genera valore. Togliere è il primo passo per riaccendere l'energia nei team.",
+    a: "Ogni organizzazione accumula strati nel tempo: tool ridondanti, processi ereditati, riunioni senza scopo. Noi identifichiamo e rimuoviamo tutto ciò che non genera valore. Togliere è il primo passo per restituire energia ai team.",
   },
   {
     q: "Con che tipo di aziende lavorate?",

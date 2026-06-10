@@ -15,14 +15,14 @@ const items = [
     text: "AI e dati ci dicono cosa funziona e cosa no. Le scelte si basano su fatti, non su mode o abitudini consolidate.",
   },
   {
-    num: "Accendere",
+    num: "Muovere",
     title: "Il cambiamento parte dalle persone",
     text: "Il cambiamento più potente è quello che le persone sentono proprio. Lavoriamo su commitment, ownership e chiarezza.",
   },
   {
     num: "Mantenere",
-    title: "Il fuoco resta acceso",
-    text: "Il progetto non finisce quando ce ne andiamo. Governance, misurazione, adattamento continuo: perché il valore non si spenga.",
+    title: "La trazione non si perde",
+    text: "Il progetto non finisce quando ce ne andiamo. Governance, misurazione, adattamento continuo: perché il valore resti visibile e praticabile.",
   },
 ];
 
